@@ -17,10 +17,17 @@
     <!--TODO: Check against Frontend Checklist, cross-browser testing, JS testing, SASS, etc. -->
 </head>
 <main>
-<body>
+    <body>
+        <h1>Etch-A-Sketch</h1>
+        <form>
+            <h2>What size is your grid?</h2>
+            <input type="range" name="gridSize" id="gridSize" min="4" max="20" onclick="createGrid()">
+        </form>
+        <p id="report"></p>
 
+        <div id="sketchContainer"></div>
 
-    <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="index.js"></script>
     </body>
 </main>
 </html>

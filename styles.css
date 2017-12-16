@@ -1,0 +1,5 @@
+#sketchContainer {
+    display: grid;
+    height: 60vmin;
+    width: 60vmin;
+}
