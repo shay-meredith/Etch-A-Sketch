@@ -17,3 +17,10 @@ function createGrid() {
 function addDiv() {
   sketchContainer.appendChild(document.createElement("DIV"));
 }
+
+function clearGrid() {
+    let gridCount = sketchContainer.children.length;
+    for (i = 0; i < gridCount; i++) {
+        sketchContainer.childNodes[i].classList.remove("clicked");
+    }
+}
