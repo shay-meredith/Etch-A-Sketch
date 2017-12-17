@@ -1,5 +1,7 @@
 const sketchContainer = document.getElementById("sketchContainer");
 
+
+//TODO: Find bug that causes range input to sometimes fail to update grid
 function createGrid() {
     while (sketchContainer.hasChildNodes()) {
         sketchContainer.removeChild(sketchContainer.firstChild);
@@ -10,7 +12,7 @@ function createGrid() {
     addDiv();
     sketchContainer.childNodes[i].addEventListener("click", function() {
         this.classList.toggle("clicked");
-      });
+    });
   }
 }
 
@@ -24,3 +26,21 @@ function clearGrid() {
         sketchContainer.childNodes[i].classList.remove("clicked");
     }
 }
+
+/*
+TODO: Finish radio select function (completely untested)
+function selectDrawType {
+    if (document.getElementById("clickType").checked == true) {
+        sketchContainer.childNodes[i].addEventListener("click", function() {
+        this.classList.toggle("clicked");
+    }
+    else if (document.getElementById("hoverType").checked == true) {
+        sketchContainer.childNodes[i].addEventListener("hover", function() {
+        this.classList.toggle("clicked");
+    }
+    else {
+        sketchContainer.childNodes[i].addEventListener("mousedown", function() {
+        this.classList.toggle("clicked");
+    }
+}
+*/

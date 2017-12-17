@@ -18,7 +18,7 @@
     <!--TODO: Check against Frontend Checklist, cross-browser testing, JS testing, SASS, etc. -->
 </head>
 <main>
-    <body>
+    <body onload="createGrid()">
         <h1>Etch-A-Sketch</h1>
         <form>
             <h2>What size is your grid?</h2>
@@ -29,6 +29,12 @@
 <!--TODO: Add color selector, box selector type choice (click, hover, drag), and styling-->
 
         <div id="sketchContainer"></div>
+
+        <form>
+            <input type="radio" name="drawType" value="clickType" id="clickType" checked>Click
+            <input type="radio" name="drawType" value="hoverType" id="hoverType">Hover
+            <input type="radio" name="drawType" value="dragType" id="dragType">Drag
+        </form>
 
         <script type="text/javascript" src="index.js"></script>
     </body>
