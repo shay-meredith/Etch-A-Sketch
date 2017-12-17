@@ -1,16 +1,123 @@
 * {
     box-sizing: border-box;
+    background-color: #33691e;
+    color: white;
+    font-family: "Lato", Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+button {
+    background-color: #9a0007;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px rgba(90, 90, 90, 0.6);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline;
+}
+form {
+    display: inline;
 }
 #sketchContainer {
-    border: 1px solid black;
+    border: 1px solid #003d00;
     display: grid;
     height: 60vmin;
+    margin: 25px auto;
     width: 60vmin;
 }
 #sketchContainer > div {
-    background-color: white;
+    background-color: #629749;
     border: 0.5px solid black;
 }
 .clicked {
-    background-color: black !important;
+    background-color: #003d00 !important;
 }
+
+/*Input slider styling*/
+input[type=range] {
+    -webkit-appearance: none;
+    width: 30vw;
+    margin: 10px;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 30vw;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 8px;
+    border: 0.1px solid #010101;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 29px;
+    width: 10px;
+    border-radius: 38px;
+    background: #9a0007;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -9.6px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #367ebd;
+  }
+  input[type=range]::-moz-range-track {
+    width: 30vw;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 8px;
+    border: 0.1px solid #010101;
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 29px;
+    width: 10px;
+    border-radius: 38px;
+    background: #9a0007;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 30vw;
+    height: 10px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.1px solid #010101;
+    border-radius: 16px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.1px solid #010101;
+    border-radius: 16px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 29px;
+    width: 10px;
+    border-radius: 38px;
+    background: #9a0007;
+    cursor: pointer;
+    height: 10px;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #3071a9;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #367ebd;
+  }
+  /* Thanks to Daniel Stern: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
