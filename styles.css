@@ -5,6 +5,14 @@
     font-family: "Lato", Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
 }
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+h2 {
+    font-size: 2em;
+    font-weight: 300;
+}
 button {
     background-color: #9a0007;
     border: none;
