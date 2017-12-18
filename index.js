@@ -1,5 +1,14 @@
 const sketchContainer = document.getElementById("sketchContainer");
 
+const bodyElement = document.body;
+bodyElement.onload = createGrid;
+
+const range = document.getElementById("gridSize");
+range.onmouseup = createGrid;
+
+const clearButton = document.getElementById("clear");
+clearButton.onclick = clearGrid;
+
 
 //TODO: Find bug that causes range input to sometimes fail to update grid
 function createGrid() {
