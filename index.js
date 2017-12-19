@@ -79,16 +79,22 @@ function drawType(radioContainer) {
     if (radioContainer === clickContainer) {
         for (i = 0; i < size * size; i++) {
             sketchContainer.childNodes[i].removeEventListener("mouseover", hovered);
+            sketchContainer.childNodes[i].removeEventListener("drag", dragged);
             sketchContainer.childNodes[i].addEventListener("click", clicked);
         }
     }
     else if (radioContainer === hoverContainer) {
         for (i = 0; i < size * size; i++) {
             sketchContainer.childNodes[i].removeEventListener("click", clicked);
+            sketchContainer.childNodes[i].removeEventListener("drag", dragged);
             sketchContainer.childNodes[i].addEventListener("mouseover", hovered);
         }
     } else {
-        console.log("Drag");
+        for (i = 0; i < size * size; i++) {
+            sketchContainer.childNodes[i].removeEventListener("click", clicked);
+            sketchContainer.childNodes[i].removeEventListener("mouseover", hovered);
+            sketchContainer.childNodes[i].addEventListener("mouseover", dragged);
+        }
     }
 }
 
@@ -98,6 +104,10 @@ function clicked() {
 
 function hovered() {
     this.classList.add("clicked");
+}
+
+function dragged() {
+    this.onmousedown = function() {this.classList.toggle("clicked")};
 }
 
 
