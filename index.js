@@ -9,6 +9,15 @@ range.onmouseup = createGrid;
 const clearButton = document.getElementById("clear");
 clearButton.onclick = clearGrid;
 
+const clickContainer = document.getElementsByClassName("container")[0];
+const clickCheckmark = document.getElementById("click");
+const hoverContainer = document.getElementsByClassName("container")[1];
+const hoverCheckmark = document.getElementById("hover");
+const dragContainer = document.getElementsByClassName("container")[2];
+const dragCheckmark = document.getElementById("drag");
+clickContainer.onmouseup = checkmarkClicked;
+hoverContainer.onmouseup = checkmarkClicked;
+dragContainer.onmouseup = checkmarkClicked;
 
 function createGrid() {
     while (sketchContainer.hasChildNodes()) {
@@ -35,20 +44,43 @@ function clearGrid() {
     }
 }
 
-/*
-TODO: Finish radio select function (completely untested)
-function selectDrawType {
-    if (document.getElementById("clickType").checked == true) {
-        sketchContainer.childNodes[i].addEventListener("click", function() {
-        this.classList.toggle("clicked");
+function checkmarkClicked() {
+    if (this.childNodes[3].childElementCount < 1) {
+        clickCheckmark.style.backgroundColor = "#eee";
+        if (clickCheckmark.childElementCount > 0) {
+            clickCheckmark.removeChild(clickCheckmark.childNodes[0]);
+        }
+        hoverCheckmark.style.backgroundColor = "#eee";
+        if (hoverCheckmark.childElementCount > 0) {
+            hoverCheckmark.removeChild(hoverCheckmark.childNodes[0]);
+        }
+        dragCheckmark.style.backgroundColor = "#eee";
+        if (dragCheckmark.childElementCount > 0) {
+            dragCheckmark.removeChild(dragCheckmark.childNodes[0]);
+        }
+
+        this.childNodes[3].style.backgroundColor = "#9a0007";
+        const span = document.createElement("SPAN");
+        this.childNodes[3].appendChild(span);
+        this.childNodes[3].children[0].className = "checkedContainer"
+    } else {
+        this.childNodes[3].style.backgroundColor = "#eee";
+        this.childNodes[3].removeChild(this.childNodes[3].childNodes[0]);
     }
-    else if (document.getElementById("hoverType").checked == true) {
+}
+
+//TODO: Finish radio select function (completely untested)
+function selectDrawType() {
+    if (document.getElementById("click").checked == true) {
+        sketchContainer.childNodes[i].addEventListener("click", function() {
+        this.classList.toggle("clicked")});
+    }
+    else if (document.getElementById("hover").checked == true) {
         sketchContainer.childNodes[i].addEventListener("hover", function() {
-        this.classList.toggle("clicked");
+        this.classList.toggle("clicked")});
     }
     else {
         sketchContainer.childNodes[i].addEventListener("mousedown", function() {
-        this.classList.toggle("clicked");
+        this.classList.toggle("clicked")});
     }
 }
-*/
