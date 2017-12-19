@@ -18,6 +18,7 @@
     <!--TODO: Check against Frontend Checklist, cross-browser testing, JS testing, SASS, etc. -->
 </head>
 <main>
+
     <body>
         <h1>Etch-A-Sketch</h1>
         <form>
@@ -25,18 +26,42 @@
             <input type="range" name="gridSize" id="gridSize" min="4" max="20">
         </form>
         <button id="clear">Clear grid</button>
+        <div id="radioContainer">
 
-<!--TODO: Add color selector, box selector type choice (click, hover, drag), and styling-->
+            <label class="container">Click
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Hover
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Drag
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+
+
+
+        <!--<form id="drawSelect">
+            <input type="radio" name="drawType" value="clickType" id="clickType" checked>Click
+            <span class="checkmark"></span>
+            <input type="radio" name="drawType" value="hoverType" id="hoverType">Hover
+            <span class="checkmark"></span>
+            <input type="radio" name="drawType" value="dragType" id="dragType">Drag
+            <span class="checkmark"></span>
+        </form>-->
+
+        <!--TODO: Add color selector, box selector type choice (click, hover, drag), and styling-->
 
         <div id="sketchContainer"></div>
-
-        <form>
-            <input type="radio" name="drawType" value="clickType" id="clickType" checked>Click
-            <input type="radio" name="drawType" value="hoverType" id="hoverType">Hover
-            <input type="radio" name="drawType" value="dragType" id="dragType">Drag
-        </form>
 
         <script type="text/javascript" src="index.js"></script>
     </body>
 </main>
+
 </html>

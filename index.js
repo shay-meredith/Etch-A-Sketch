@@ -10,7 +10,6 @@ const clearButton = document.getElementById("clear");
 clearButton.onclick = clearGrid;
 
 
-//TODO: Find bug that causes range input to sometimes fail to update grid
 function createGrid() {
     while (sketchContainer.hasChildNodes()) {
         sketchContainer.removeChild(sketchContainer.firstChild);
