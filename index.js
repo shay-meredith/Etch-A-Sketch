@@ -27,7 +27,7 @@ function createGrid() {
   while (sketchContainer.hasChildNodes()) {
     sketchContainer.removeChild(sketchContainer.firstChild);
   }
-  //let size = document.getElementById("gridSize").value;
+  size = document.getElementById("gridSize").value;
   sketchContainer.style = `grid-template: repeat(${size}, 1fr) / repeat(${size}, 1fr)`;
   for (i = 0; i < size * size; i++) {
     addDiv();
